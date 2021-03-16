@@ -23,7 +23,7 @@ BLUE2 = (0, 100, 255)
 BLACK = (0, 0, 0)
 
 BLOCK_SIZE = 20
-SPEED = 40
+SPEED = 20
 
 class SnakeGame:
 
@@ -116,19 +116,19 @@ class SnakeGame:
         self.display.blit(text, [0, 0])
         pygame.display.flip()
 
-        def _move(self, direction):
-            x = self.head.x
-            y = self.head.y
-            if direction == Direction.RIGHT:
-                x += BLOCK_SIZE
-            elif direction == Direction.LEFT:
-                x += BLOCK_SIZE
-            elif direction == Direction.DOWN:
-                y += BLOCK_SIZE
-            elif direction == Direction.UP:
-                y += BLOCK_SIZE
+    def _move(self, direction):
+        x = self.head.x
+        y = self.head.y
+        if direction == Direction.RIGHT:
+            x += BLOCK_SIZE
+        elif direction == Direction.LEFT:
+            x -= BLOCK_SIZE
+        elif direction == Direction.DOWN:
+            y += BLOCK_SIZE
+        elif direction == Direction.UP:
+            y -= BLOCK_SIZE
 
-            self.head = Point(x, y)
+        self.head = Point(x, y)
 
 if __name__ == '__main__':
     game = SnakeGame()
