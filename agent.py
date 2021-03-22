@@ -94,7 +94,7 @@ class Agent:
             state0 = torch.tensor(state, dtype=torch.float)
             prediction = self.model(state0)
             move = torch.argmax(prediction).item()
-            inal_move[move] = 1
+            final_move[move] = 1
 
         return final_move
 
